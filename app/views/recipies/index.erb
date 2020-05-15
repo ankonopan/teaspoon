@@ -1,0 +1,23 @@
+<div class="row section">
+  <% unless @recipies.empty? %>
+    <% @recipies.recipies.each do |recipe| %>
+      <div class="col s12 m12 l12 card">
+  <div class="card-content">
+    <div class="col s12">
+      <a href="/recipies/<%= recipe.id%>">
+        <img src="<%= recipe.photo.url %>" alt="" width="100%">
+      </a>
+    </div>
+    <span class="card-title">
+      <a href="/recipies/<%= recipe.id%>"> <%= recipe.title%></a>
+    </span>
+    <p>
+      <%= recipe.description %>
+    </p>
+  </div>
+</div>
+    <% end %>
+  <% else %>
+    No reipies found
+  <% end %>
+</div>

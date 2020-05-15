@@ -8,6 +8,10 @@ git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 gem 'contentful'
 gem 'rubocop-shopify'
 
+gem 'rake'
+gem 'shotgun'
+gem 'sinatra'
+
 group :development, :test do
   gem 'awesome_print'
   gem 'pry-byebug'

@@ -1,0 +1,29 @@
+<div class="row">
+  <br>
+  <nav>
+    <div class="nav-wrapper">
+      <div class="col s12">
+        <a href="/" class="breadcrumb">Home</a>
+        <a href="#!" class="breadcrumb"> <%= @recipe.title%></a>
+      </div>
+    </div>
+  </nav>
+  <br>
+
+  <h3 class="card-title">
+   <%= @recipe.title%>
+  </h3>
+
+  <div class="col s12 m12 l12 card">
+    <div class="card-image">
+      <img src="<%= @recipe.photo.url %>" alt="">
+    </div>
+    <div class="card-content">
+
+      <p>
+        <%= @recipe.description %>
+      </p>
+    </div>
+  </div>
+</div>
+
