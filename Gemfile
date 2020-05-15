@@ -9,6 +9,7 @@ gem 'contentful'
 gem 'rubocop-shopify'
 
 group :development, :test do
+  gem 'rspec'
   gem 'awesome_print'
   gem 'pry-byebug'
   gem 'pry-doc'
