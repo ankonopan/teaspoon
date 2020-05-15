@@ -4,18 +4,12 @@ module Types
   module Teaspoon
     # :nodoc:
     class Recipe < Contentful::Entry
-      def to_h
-        data = {
-          title: title,
-          calories: calories,
-          description: description
-        }
+      def tag_names
+        respond_to?(:tags) ? tags.map(&:name) : []
+      end
 
-        data[:photo] = photo.url if respond_to?(:photo)
-
-        data[:tags] = tags.map(&:name) if respond_to?(:tags)
-
-        data
+      def chef_name
+        respond_to?(:chef) ? chef.name : nil
       end
     end
   end

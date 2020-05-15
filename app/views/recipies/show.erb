@@ -1,13 +1,6 @@
 <div class="row">
   <br>
-  <nav>
-    <div class="nav-wrapper">
-      <div class="col s12">
-        <a href="/" class="breadcrumb">Home</a>
-        <a href="#!" class="breadcrumb"> <%= @recipe.title%></a>
-      </div>
-    </div>
-  </nav>
+  <a href="/" class="btn-small">Home</a>
   <br>
 
   <h3 class="card-title">
@@ -19,7 +12,17 @@
       <img src="<%= @recipe.photo.url %>" alt="">
     </div>
     <div class="card-content">
-
+      <p>
+        <% if @recipe.chef_name %>
+        Chef: <%= @recipe.chef_name %>
+        <% end %>
+        <% @recipe.tag_names.each do |t|%>
+          <span class="new badge grey-text indigo lighten-4"><%= t %></span>
+        <% end %>
+      </p>
+      <br>
+      <hr color="#efefef">
+      <br>
       <p>
         <%= Kramdown::Document.new(@recipe.description).to_html %>
       </p>

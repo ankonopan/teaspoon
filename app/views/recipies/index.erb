@@ -1,19 +1,17 @@
 <div class="row section">
   <% unless @recipies.empty? %>
     <% @recipies.recipies.each do |recipe| %>
-      <div class="col s12 m12 l12 card">
+      <div class="col s12 m6  card">
   <div class="card-content">
     <div class="col s12">
       <a href="/recipies/<%= recipe.id%>">
         <img src="<%= recipe.photo.url %>" alt="" width="100%">
       </a>
     </div>
+    <br>
     <span class="card-title">
       <a href="/recipies/<%= recipe.id%>"> <%= recipe.title%></a>
     </span>
-    <p>
-      <%= Kramdown::Document.new(recipe.description).to_html %>
-    </p>
   </div>
 </div>
     <% end %>
