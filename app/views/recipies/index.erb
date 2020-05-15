@@ -12,7 +12,7 @@
       <a href="/recipies/<%= recipe.id%>"> <%= recipe.title%></a>
     </span>
     <p>
-      <%= recipe.description %>
+      <%= Kramdown::Document.new(recipe.description).to_html %>
     </p>
   </div>
 </div>

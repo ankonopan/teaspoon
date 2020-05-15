@@ -21,7 +21,7 @@
     <div class="card-content">
 
       <p>
-        <%= @recipe.description %>
+        <%= Kramdown::Document.new(@recipe.description).to_html %>
       </p>
     </div>
   </div>

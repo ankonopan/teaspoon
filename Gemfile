@@ -11,6 +11,7 @@ gem 'rubocop-shopify'
 gem 'rake'
 gem 'shotgun'
 gem 'sinatra'
+gem 'kramdown'
 
 group :development, :test do
   gem 'awesome_print'
