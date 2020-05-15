@@ -12,7 +12,7 @@ describe Teaspoon::Recipies do
     )
   end
   let(:first_recipe_id) do
-    config[:client].entries(content_type: 'recipe').first.id
+    client.entries(content_type: 'recipe').first.id
   end
   subject { described_class.new(client: client) }
 
@@ -28,6 +28,12 @@ describe Teaspoon::Recipies do
     subject.show(first_recipe_id).tap do |response|
       expect(response).to be_a(Types::Teaspoon::Recipe)
       expect(response.id).to eq(first_recipe_id)
+    end
+  end
+
+  it 'returns nil when the recipe doesn\'t exist' do
+    subject.show("error").tap do |response|
+      expect(response).to be_nil
     end
   end
 end

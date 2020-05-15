@@ -25,7 +25,8 @@ class ApplicationController < Sinatra::Base
 
   get '/recipies/:id' do
     @recipe = settings.repository.show(params[:id])
-    erb :'recipies/show'
+    view = @recipe.nil? ? 'recipies/not_found' : 'recipies/show'
+    erb view.to_sym
   end
 
 end
