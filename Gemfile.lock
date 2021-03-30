@@ -28,7 +28,7 @@ GEM
     http-parser (1.2.1)
       ffi-compiler (>= 1.0, < 2.0)
     jaro_winkler (1.5.4)
-    kramdown (2.2.1)
+    kramdown (2.3.1)
       rexml
     method_source (1.0.0)
     multi_json (1.14.1)
